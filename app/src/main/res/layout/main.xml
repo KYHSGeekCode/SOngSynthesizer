@@ -1,11 +1,298 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:orientation="vertical">
 
-    <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+	<HorizontalScrollView
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent">
+
+		<ScrollView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content">
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:orientation="vertical">
+
+				<LinearLayout
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:orientation="horizontal">
+
+					<EditText
+						android:layout_height="wrap_content"
+						android:ems="10"
+						android:layout_width="match_parent"
+						android:text="Title"
+						android:id="@+id/etTitle"/>
+
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:orientation="horizontal">
+
+					<EditText
+						android:layout_height="wrap_content"
+						android:inputType="textMultiLine"
+						android:ems="10"
+						android:layout_width="wrap_content"
+						android:id="@+id/etLyric"
+						android:text="lyrics"/>
+
+					<Button
+						android:layout_height="wrap_content"
+						android:text="Go!"
+						android:layout_width="wrap_content"
+						android:id="@+id/btGo"/>
+
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_height="wrap_content"
+					android:layout_width="match_parent"
+					android:orientation="vertical"
+					android:layout_margin="10dp">
+
+					<EditText
+						android:layout_height="wrap_content"
+						android:ems="10"
+						android:layout_width="match_parent"
+						android:id="@+id/etStatus"
+						android:text="status"/>
+
+				</LinearLayout>
+
+				<Button
+					android:layout_height="wrap_content"
+					android:text="Start setting frequencies"
+					android:layout_width="wrap_content"
+					android:id="@+id/btStartFreq"/>
+
+				<LinearLayout
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:orientation="vertical"
+					android:layout_margin="10dp"
+					android:background="#C46660">
+
+					<TextView
+						android:layout_height="wrap_content"
+						android:text="글자"
+						android:textAppearance="?android:attr/textAppearanceMedium"
+						android:layout_width="match_parent"
+						android:gravity="center"
+						android:id="@+id/tvLetter"/>
+
+					<LinearLayout
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:orientation="vertical"
+						android:id="@+id/llSetFreq">
+
+						<GridLayout
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							rowCount="1"
+							columnCount="1"
+							android:id="@+id/glFreqs"
+							android:columnCount="6"
+							android:orientation="horizontal">
+
+							<RadioGroup
+								android:layout_height="wrap_content"
+								android:layout_width="wrap_content"
+								android:orientation="horizontal"
+								android:gravity="center"
+								android:layout_gravity="center"
+								android:id="@+id/rgNote">
+
+								<RadioButton
+									android:layout_height="wrap_content"
+									android:text="C"
+									android:layout_width="wrap_content"
+									android:id="@+id/rbNTC"/>
+
+								<RadioButton
+									android:layout_height="wrap_content"
+									android:text="C#"
+									android:layout_width="wrap_content"
+									android:id="@+id/rbNTCS"/>
+
+								<RadioButton
+									android:layout_height="wrap_content"
+									android:text="D"
+									android:layout_width="wrap_content"
+									android:id="@+id/rbNTD"/>
+
+								<RadioButton
+									android:layout_height="wrap_content"
+									android:text="D#"
+									android:layout_width="wrap_content"
+									android:id="@+id/rbNTDS"/>
+
+								<RadioButton
+									android:layout_height="wrap_content"
+									android:text="E"
+									android:layout_width="wrap_content"
+									android:id="@+id/rbNTE"/>
+
+								<RadioButton
+									android:layout_height="wrap_content"
+									android:text="F"
+									android:layout_width="wrap_content"
+									android:id="@+id/rbNTF"/>
+
+								<RadioButton
+									android:layout_height="wrap_content"
+									android:text="F#"
+									android:layout_width="wrap_content"
+									android:id="@+id/rbNTFS"/>
+
+								<RadioButton
+									android:layout_height="wrap_content"
+									android:text="G"
+									android:layout_width="wrap_content"
+									android:id="@+id/rbNTG"/>
+
+								<RadioButton
+									android:layout_height="wrap_content"
+									android:text="G#"
+									android:layout_width="wrap_content"
+									android:id="@+id/rbNTGS"/>
+
+								<RadioButton
+									android:layout_height="wrap_content"
+									android:text="A"
+									android:layout_width="wrap_content"
+									android:id="@+id/rbNTA"/>
+
+								<RadioButton
+									android:layout_height="wrap_content"
+									android:text="A#"
+									android:layout_width="wrap_content"
+									android:id="@+id/rbNTAS"/>
+
+								<RadioButton
+									android:layout_height="wrap_content"
+									android:text="B"
+									android:layout_width="wrap_content"
+									android:id="@+id/rbNTB"/>
+
+							</RadioGroup>
+
+						</GridLayout>
+
+						<TextView
+							android:layout_height="wrap_content"
+							android:text="Octave"
+							android:textAppearance="?android:attr/textAppearanceMedium"
+							android:layout_width="match_parent"
+							android:layout_gravity="center"
+							android:gravity="center"
+							android:layout_marginTop="10dp"
+							android:layout_marginBottom="10dp"/>
+
+						<GridLayout
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							rowCount="1"
+							columnCount="1"
+							android:columnCount="7"
+							android:layout_gravity="center">
+
+							<RadioGroup
+								android:layout_height="wrap_content"
+								android:layout_width="wrap_content"
+								android:orientation="horizontal"
+								android:layout_gravity="center"
+								android:gravity="center"
+								android:id="@+id/rgOctave">
+
+								<RadioButton
+									android:layout_height="wrap_content"
+									android:text="-3"
+									android:layout_width="wrap_content"
+									android:id="@+id/rbovn3"/>
+
+								<RadioButton
+									android:layout_height="wrap_content"
+									android:text="-2"
+									android:layout_width="wrap_content"
+									android:id="@+id/rbovn2"/>
+
+								<RadioButton
+									android:layout_height="wrap_content"
+									android:text="-1"
+									android:layout_width="wrap_content"
+									android:id="@+id/rbovn1"/>
+
+								<RadioButton
+									android:layout_height="wrap_content"
+									android:text="0"
+									android:layout_width="wrap_content"
+									android:id="@+id/rbov0"/>
+
+								<RadioButton
+									android:layout_height="wrap_content"
+									android:text="1"
+									android:layout_width="wrap_content"
+									android:id="@+id/rbov1"/>
+
+								<RadioButton
+									android:layout_height="wrap_content"
+									android:text="2"
+									android:layout_width="wrap_content"
+									android:id="@+id/rbov2"/>
+
+								<RadioButton
+									android:layout_height="wrap_content"
+									android:text="3"
+									android:layout_width="wrap_content"
+									android:id="@+id/rbov3"/>
+
+							</RadioGroup>
+
+						</GridLayout>
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:orientation="horizontal"
+						android:layout_gravity="right">
+
+						<TextView
+							android:layout_height="match_parent"
+							android:text="progress"
+							android:textAppearance="?android:attr/textAppearanceLarge"
+							android:layout_width="wrap_content"
+							android:id="@+id/tvProgress"
+							android:gravity="center"/>
+
+						<Button
+							android:layout_height="wrap_content"
+							android:text="Next"
+							android:layout_width="wrap_content"
+							android:id="@+id/btNextFreq"
+							android:layout_weight="2"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+			</LinearLayout>
+
+		</ScrollView>
+
+	</HorizontalScrollView>
 
 </LinearLayout>
+
